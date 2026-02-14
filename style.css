@@ -1,0 +1,256 @@
+:root {
+  --bg: #0a0a20;
+  --card: rgba(19, 17, 52, 0.7);
+  --text: #f5f5ff;
+  --accent: #53d8fb;
+  --accent-2: #ff7de9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top, #22164f 0%, var(--bg) 50%);
+  overflow-x: hidden;
+}
+
+#stars {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(8px);
+  background: rgba(10, 10, 32, 0.45);
+  border-bottom: 1px solid rgba(83, 216, 251, 0.2);
+  z-index: 10;
+}
+
+.nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.menu-btn {
+  display: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 3.5rem 1rem 4rem;
+  position: relative;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+}
+
+.hero h2 {
+  font-size: clamp(2rem, 6vw, 4rem);
+  margin: 0.5rem 0;
+}
+
+.hero h2 span {
+  background: linear-gradient(45deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  max-width: 650px;
+  margin: 0 auto 1.5rem;
+  opacity: 0.9;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.9rem 1.4rem;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #0c0c21;
+  background: linear-gradient(120deg, var(--accent), #9af0ff);
+  font-weight: 700;
+}
+
+.pulse {
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(83, 216, 251, 0.45); }
+  70% { box-shadow: 0 0 0 14px rgba(83, 216, 251, 0); }
+}
+
+.float-orbs .orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(1px);
+  opacity: 0.65;
+}
+
+.orb-1 {
+  width: 80px;
+  height: 80px;
+  top: 8%;
+  left: 12%;
+  background: var(--accent);
+  animation: float 6s ease-in-out infinite;
+}
+
+.orb-2 {
+  width: 60px;
+  height: 60px;
+  right: 18%;
+  top: 18%;
+  background: var(--accent-2);
+  animation: float 7.5s ease-in-out infinite reverse;
+}
+
+.orb-3 {
+  width: 48px;
+  height: 48px;
+  right: 28%;
+  top: 62%;
+  background: #7dffdb;
+  animation: float 5.2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+
+.card-section,
+.project-card {
+  background: var(--card);
+  border: 1px solid rgba(122, 179, 255, 0.25);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.card-section {
+  margin-bottom: 1.2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.project-card {
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  transform-style: preserve-3d;
+}
+
+.project-card:hover {
+  border-color: rgba(83, 216, 251, 0.8);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.chips span {
+  background: rgba(83, 216, 251, 0.12);
+  border: 1px solid rgba(83, 216, 251, 0.4);
+  border-radius: 999px;
+  padding: 0.45rem 0.8rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1.4rem;
+  opacity: 0.85;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 850px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 66px;
+    right: 12px;
+    flex-direction: column;
+    background: rgba(12, 12, 35, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    padding: 0.8rem;
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+}

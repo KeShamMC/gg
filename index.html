@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpyKeSham | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <header class="site-header">
+    <nav class="nav">
+      <h1 class="logo">SpyKeSham</h1>
+      <button id="menuBtn" class="menu-btn" aria-label="Toggle menu">☰</button>
+      <ul id="navList" class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero reveal">
+      <p class="eyebrow">2D Creative Portfolio</p>
+      <h2>Hi, I'm <span>SpyKeSham</span></h2>
+      <p class="subtitle">
+        I design immersive digital experiences with smooth motion, bold visuals,
+        and playful 2D storytelling.
+      </p>
+      <a href="#projects" class="btn pulse">Explore My Work</a>
+      <div class="float-orbs">
+        <span class="orb orb-1"></span>
+        <span class="orb orb-2"></span>
+        <span class="orb orb-3"></span>
+      </div>
+    </section>
+
+    <section id="about" class="card-section reveal">
+      <h3>About Me</h3>
+      <p>
+        I'm SpyKeSham — a portfolio-focused creator who blends clean code, stylized 2D graphics,
+        and micro-interactions to build sites that feel alive.
+      </p>
+    </section>
+
+    <section id="projects" class="grid reveal">
+      <article class="project-card tilt">
+        <h4>Motion Landing Pages</h4>
+        <p>Animated hero sections with gradient flows and particle backgrounds.</p>
+      </article>
+      <article class="project-card tilt">
+        <h4>2D Game UI Mockups</h4>
+        <p>Arcade-inspired interface components with neon visual language.</p>
+      </article>
+      <article class="project-card tilt">
+        <h4>Interactive Story Sites</h4>
+        <p>Scroll-triggered transitions that guide users through visual narratives.</p>
+      </article>
+    </section>
+
+    <section id="skills" class="card-section reveal">
+      <h3>Skills</h3>
+      <div class="chips">
+        <span>HTML5</span>
+        <span>CSS3 Animation</span>
+        <span>JavaScript</span>
+        <span>2D Visual Design</span>
+        <span>UI Motion</span>
+      </div>
+    </section>
+
+    <section id="contact" class="card-section reveal">
+      <h3>Let's Create Something Amazing</h3>
+      <p>Contact: <a href="mailto:spykesham@portfolio.dev">spykesham@portfolio.dev</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> SpyKeSham. Crafted with motion and imagination.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
